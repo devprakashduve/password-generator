@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
+import Todos from "./todo";
 
 export default function Home() {
-  const [randomPassword, setRandomPassword] = useState("adsfkahdka");
+  const [randomPassword, setRandomPassword] = useState("");
   const [passwordLength, setPasswordLength] = useState(10);
   const [numbers, setNumbers] = useState(false);
   const [speacialChar, setSpeacialChar] = useState(false);
@@ -19,8 +20,8 @@ export default function Home() {
   };
 
   const generatePassword = () => {
-    setRandomPassword("");
-    const char: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // setRandomPassword("");
+    const char: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz";
     let val: any = "";
     val += char;
     if (numbers) {
@@ -35,20 +36,52 @@ export default function Home() {
       i < passwordLength;
       i += 1, j -= 1
     ) {
-      const index = Math.floor(Math.random() * val.length);
-      result += val[index];
+      const index = Math.floor(Math.random() * val.length+1);
+      result += val.charAt(index);
     }
     setRandomPassword(result);
+  }
+
+  useEffect(()=>{
+    generatePassword()
+  },[passwordLength,numbers,speacialChar])
+
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+
+  const increment = () => {
+    setCount((c) => c + 1);
   };
+  const addTodo = useCallback(() => {
+    setTodos((prev) => [...prev, "New Todo"]);
+  },[todos]);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="w-full  py-20 px-20 items-stretch  md:w-1/2">
+    <main className="flex min-h-screen flex-row items-center justify-between p-24">
+       <div className="w-1/2  py-20 mx-20 items-stretch  md:w-1/2">
+        <p className="font-bold my-20">Todo app in progress...</p>
+       <>
+      <Todos todos={todos} addTodo={addTodo} />
+      <hr />
+      <div>
+        Count: {count}
+       
+        <button onClick={increment}
+    type="button"
+    className="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+  >
+    Increase +
+  </button>
+      </div>
+    </>
+       </div>
+      <div className="w-1/2  py-20  items-stretch  md:w-1/2">
+      <p className="font-bold my-20" >Generate your random password</p>
         <div className="flex w-full items-center space-x-2 ">
           <input
             className="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
             type="text"
             placeholder="Random Password"
-            value={randomPassword}
+            defaultValue={randomPassword}
           />
           <button
             onClick={generatePassword}
@@ -68,7 +101,7 @@ export default function Home() {
             value={passwordLength}
             onChange={(e) => {
               changeLenght(e);
-              generatePassword();
+             
             }}
           />
           : {passwordLength}
@@ -78,7 +111,7 @@ export default function Home() {
             name="addNumbers"
             onChange={() => {
               enableNumbers();
-              generatePassword();
+           
             }}
             checked={numbers}
           />{" "}
@@ -89,7 +122,7 @@ export default function Home() {
             name="addSpecialCharacters"
             onChange={() => {
               enableSpecialChar();
-              generatePassword();
+           
             }}
             checked={speacialChar}
           />
