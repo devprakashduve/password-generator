@@ -53,7 +53,8 @@ export default function Home() {
     setCount((c) => c + 1);
   };
   const addTodo = useCallback(() => {
-    setTodos((prev) => [...prev, "New Todo"]);
+    // setTodos((prev) => [...prev, "New Todo"]);
+    console.log("work in progress.....")
   },[todos]);
   return (
     <main className="flex min-h-screen flex-row items-center justify-between p-24">
