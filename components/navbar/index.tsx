@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import { Menu, X } from 'lucide-react'
-
+import {  Menu, X } from 'lucide-react'
+import Link from 'next/link'
 const menuItems = [
   {
     name: 'Random Password',
@@ -31,21 +31,21 @@ const NavBar=()=> {
         <div className="inline-flex items-center space-x-2">
        
           <span className="font-bold">
-          <a
+          <Link
                   href={"/"}
                   className="text-sm font-semibold text-gray-100 hover:text-gray-400"
-                >Home</a></span>
+                >Home</Link></span>
         </div>
         <div className="hidden lg:block">
           <ul className="inline-flex space-x-8">
             {menuItems.map((item) => (
               <li key={item.name}>
-                <a
+                <Link
                   href={item.href}
                   className="text-sm font-semibold text-gray-100 hover:text-gray-400"
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -69,10 +69,10 @@ const NavBar=()=> {
                   <div className="inline-flex items-center space-x-2">
                     
                   <span className="font-bold">
-          <a
+          <Link
                   href={"/"}
                   className="text-sm font-semibold text-gray-100 hover:text-gray-400"
-                >Home</a></span>
+                >Home</Link></span>
                   </div>
                   <div className="-mr-2">
                     <button
@@ -88,7 +88,7 @@ const NavBar=()=> {
                 <div className="mt-6">
                   <nav className="grid gap-y-4">
                     {menuItems.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
@@ -96,7 +96,7 @@ const NavBar=()=> {
                         <span className="ml-3 text-base font-medium text-gray-900">
                           {item.name}
                         </span>
-                      </a>
+                      </Link>
                     ))}
                   </nav>
                 </div>
