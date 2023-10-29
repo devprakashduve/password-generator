@@ -5,9 +5,9 @@ import { useState, useCallback, useEffect } from "react";
 
 const RandomPassword=()=> {
   const [randomPassword, setRandomPassword] = useState("");
-  const [passwordLength, setPasswordLength] = useState(10);
-  const [numbers, setNumbers] = useState(false);
-  const [speacialChar, setSpeacialChar] = useState(false);
+  const [passwordLength, setPasswordLength] = useState(15);
+  const [numbers, setNumbers] = useState(true);
+  const [speacialChar, setSpeacialChar] = useState(true);
   const changeLenght = (e: any) => {
     const value = e.target.value;
     setPasswordLength(value);
@@ -39,6 +39,7 @@ const RandomPassword=()=> {
       const index = Math.floor(Math.random() * val.length+1);
       result += val.charAt(index);
     }
+
     setRandomPassword(result);
   },[passwordLength,numbers,speacialChar])
 
@@ -52,7 +53,7 @@ const RandomPassword=()=> {
   return (
     <>
     
-    <main className="flex min-h-screen flex-row items-center justify-center p-24">
+    
       
       <div className="w-1/2  py-0 items-stretch  md:w-1/2">
       <p className="font-bold my-20" >Generate your random password</p>
@@ -109,7 +110,7 @@ const RandomPassword=()=> {
           : Speacial Char
         </div>
       </div>
-    </main>
+    
     </>
   );
 }

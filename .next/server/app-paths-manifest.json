@@ -1,4 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/password-generator/page": "app/password-generator/page.js"
+  "/currency-converter/page": "app/currency-converter/page.js"
 }

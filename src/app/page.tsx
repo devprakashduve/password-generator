@@ -1,19 +1,22 @@
 "use client";
 
 import React from 'react'
+import Image from "next/image"
 import { Star, ChevronDown, StarHalfIcon, Linkedin, Github, Facebook, PhoneForwarded, MapPin, PhoneIncoming } from 'lucide-react'
 
 
  const Home = () => {
   return (
-    <main className="flex min-h-screen flex-row items-center justify-center p-24">
+    <>
     <section className="overflow-hidden">
       <div className="mx-auto max-w-5xl px-5 py-24">
         <div className="mx-auto flex flex-wrap items-center lg:w-9/8">
-          <img
+          <Image
             alt="Profile Pic"
-            className="h-64 w-full rounded object-cover lg:h-96 lg:w-1/2"
-            src="../images/profile.png"
+            width={400}
+            height={800}
+            className="h-64 w-full rounded object-cover md:h-96 lg:h-96 lg:w-1/2"
+            src="/images/profile.png"
           />
           <div className="mt-6 w-full lg:mt-0 lg:w-1/2 lg:pl-10">
             <h2 className="text-sm font-semibold tracking-widest text-gray-500">Software Professional</h2>
@@ -54,7 +57,7 @@ import { Star, ChevronDown, StarHalfIcon, Linkedin, Github, Facebook, PhoneForwa
         </div>
       </div>
     </section>
-    </main>
+    </>
   )
 }
 
