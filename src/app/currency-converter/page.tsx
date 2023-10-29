@@ -3,6 +3,8 @@ import InputBox from "../../../components/input";
 import Select from "../../../components/select";
 
 const CurrencyConverter = () => {
+//https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/inr.json
+
   return (
     <>
       <div
