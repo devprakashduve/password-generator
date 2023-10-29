@@ -3,11 +3,8 @@
 import React from "react"
 import InputBoxProps from "./input.interface"
 const InputBox=(props:InputBoxProps) => {
-    const [inputVal,setInputVal]= React.useState(props.value)
-    const changeValue=(e:any)=>{
-        setInputVal(e.target.value)
-console.log(inputVal)
-    }
+    
+    
   return (
     <div className="w-full ">
       <input
@@ -15,10 +12,8 @@ console.log(inputVal)
         type={props.type}
         placeholder={props.placeholder}
         name={props.name}
-        value={inputVal}
-        onChange={(e)=>{
-            changeValue(e)
-        }}
+        value={props.value}
+        onChange={props.onChange}
       />
     </div>
   )

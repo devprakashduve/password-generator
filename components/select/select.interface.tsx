@@ -3,6 +3,8 @@ export default interface SelectProps{
     name:string,
     placeholder:string,
     options:string[],
-    defaultOptions:string,
-    onChange?:()=>void
+    defaultOptions?:string,
+    value?:any,
+    onChange?:(e: any) => void;
+    onClick?:(e: any) => void;
     }

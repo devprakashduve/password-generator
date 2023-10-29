@@ -4,5 +4,5 @@ id?:string,
 name:string,
 placeholder:string,
 value:any,
-onChange?:()=>void
+onChange?:(e:any)=>void
 }
