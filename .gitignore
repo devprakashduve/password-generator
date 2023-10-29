@@ -4,7 +4,8 @@ node_modules/
 .next/cache
 out/
 .cache/
-yarn-error.log
+
+.next/cache/**/*.pack.gz
 
 # Ignore environment files (customizable, use the ones you need)
 .env.local
@@ -33,7 +34,7 @@ ehthumbs.v
 package-lock.json
 
 # Ignore yarn.lock if you're using Yarn
-yarn.lock
+# yarn.lock
 
 # Ignore .env files that may contain sensitive information
 .env*
