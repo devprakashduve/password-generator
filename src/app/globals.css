@@ -25,6 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.relative.w-full.border-b-2.sticky.top-0 {
+  z-index: 9;
+}
 .eyeIcon{
   position: absolute;
   color: #000;
