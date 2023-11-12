@@ -34,3 +34,7 @@ body {
 .eyeIcon:hover{
   cursor: pointer
 }
+.user-data{
+  position:absolute;
+  top:35px;
+}
