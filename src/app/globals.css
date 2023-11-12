@@ -25,3 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.eyeIcon{
+  position: absolute;
+  color: #000;
+  right: 53px;
+  padding: 8px;
+}
+.eyeIcon:hover{
+  cursor: pointer
+}

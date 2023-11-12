@@ -13,6 +13,10 @@ const menuItems = [
     href: '/currency-converter',
   },
   {
+    name: 'Login',
+    href: '/login',
+  },
+  {
     name: 'Contact',
     href: '#',
   },
