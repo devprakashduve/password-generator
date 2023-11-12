@@ -52,7 +52,7 @@ import { Star, ChevronDown, StarHalfIcon, Linkedin, Github, Facebook, PhoneForwa
             </div>
           </div>
           <div className=' flex items-center border-t-2 border-gray-100 my-3 py-5'>
-          Keyword's: NodeJS | ReactJS | NextJS | JAVA | MySQL | angular | PHP | Zend-Framework | CodeIgniter Framework | API Development - REST and SOAP | Software Development | Application Development | Web Technologies | Web Development | HTML5 | CSS3 | SCSS | JavaScript | jQuery | Ajax| Three.js, WebGL, Python
+          Keyword`&apos;`s: NodeJS | ReactJS | NextJS | JAVA | MySQL | angular | PHP | Zend-Framework | CodeIgniter Framework | API Development - REST and SOAP | Software Development | Application Development | Web Technologies | Web Development | HTML5 | CSS3 | SCSS | JavaScript | jQuery | Ajax| Three.js, WebGL, Python
           </div>
         </div>
       </div>

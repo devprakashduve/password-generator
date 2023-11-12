@@ -45,9 +45,9 @@ const RandomPassword=()=> {
 
   useEffect(()=>{
     generatePassword()
-  },[passwordLength,numbers,speacialChar])
+  },[passwordLength,numbers,speacialChar,generatePassword])
 
- 
+//  console.log("loading/..........")
 
  
   return (

@@ -17,7 +17,9 @@ const CurrencyConverter = () => {
   const [data, loading, error] = useApi(apiSource);
  
   
-  const convert = ()=> {const val=amount * currencyInfo[currencyTo];
+  const convert = ()=> { 
+    
+    const val=amount * currencyInfo[currencyTo];
     setConvertedAmount(val);}
  
   React.useEffect(() => {
@@ -28,11 +30,11 @@ const CurrencyConverter = () => {
       setCurrencyList(Object.keys(receivedData));
       setCurrencyInfo(receivedData);
      
-     
+      convert();
     }
-     convert();
+    
    
-  }, [data, currencyFrom, currencyTo, amount]);
+  }, [data, currencyFrom, currencyTo, amount,currencyInfo]);
   
  
   const handleOptionChange = (e: any) => {
@@ -52,6 +54,8 @@ const CurrencyConverter = () => {
     const value = e.target.value;
     setAmount(value);
   };
+
+  // console.log("loaded....")
 
   return (
     <>
@@ -76,7 +80,7 @@ const CurrencyConverter = () => {
               <InputBox
                 type={"number"}
                 name={"currencyOne"}
-                value={amount}
+                value={amount as number}
                 placeholder={"Please enter value"}
                 onChange={handleOptionOne}
               />
@@ -92,14 +96,14 @@ const CurrencyConverter = () => {
               <InputBox
                 type={"number"}
                 name={"currencyTwo"}
-                value={convertedAmount}
+                value={convertedAmount as number}
                 placeholder={"Please enter value"}
               />
               <Select
                 name={"currencyTwoOptions"}
                 placeholder={""}
                 options={currencyList}
-                value={currencyTo}
+                value={currencyTo }
                 onChange={handleCurrencyChangeTo}
               />
             </div>
