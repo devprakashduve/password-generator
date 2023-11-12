@@ -6,8 +6,8 @@ const UserData=()=>{
     const {data}=useContext(UserContext);
     
 return (
-    <div className="user-data text-center font-bold py-4 "><p>User Email: {data.email}</p>
-    <p>User Password: {data.password}</p>
+    <div className="user-data text-center font-bold py-4 "><p>You loggedin as : {data.email}</p>
+    {/* <p>User Password: {data.password}</p> */}
     </div>
 )
 }
